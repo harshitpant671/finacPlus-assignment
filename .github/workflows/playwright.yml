@@ -36,10 +36,11 @@ jobs:
       - name: Run Playwright API tests
         run: npx playwright test user-login-api.spec.js 
 
-      - name: Upload Report
-        if: always() # Ensures reports are uploaded even if tests fail
+      - name: Upload Playwright Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-reports
-          path: reports/
+          name: playwright-report
+          path: playwright-report/   # ✅ correct path
           retention-days: 30
+          if-no-files-found: warn
