@@ -4,7 +4,7 @@ test("Reqres API Flow - Create, Get, Update User", async ({ request }) => {
   const url = "https://reqres.in";
 
   const headers = {
-    "x-api-key": "reqres_8ecec93b0d9c462abfdd5f8f63e891f0",
+    "x-api-key": process.env.API_KEY,
   };
 
   const createResponse = await request.post(`${url}/api/users`, {
