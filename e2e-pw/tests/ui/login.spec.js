@@ -1,5 +1,5 @@
-import test, { expect } from "@playwright/test";
-import { LoginPage } from "../../pages/loginPage";
+import { test, expect } from "@playwright/test";
+import { LoginPage } from "../../pages/LoginPage";
 import WebLocators from "../../pages/locator";
 import * as fs from "fs";
 

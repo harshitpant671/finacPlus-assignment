@@ -1,11 +1,7 @@
-import { Page } from "@playwright/test";
 import WebLocators from "./locator";
 
 export class LoginPage {
-  page: Page;
-  locators: WebLocators;
-
-  constructor(page: Page) {
+  constructor(page) {
     this.page = page;
     this.locators = new WebLocators(page);
   }
@@ -14,11 +10,11 @@ export class LoginPage {
     await this.page.goto("");
   }
 
-  async fillUsername(username: string) {
+  async fillUsername(username) {
     await this.locators.userName.fill(username);
   }
 
-  async fillPassword(password: string) {
+  async fillPassword(password) {
     await this.locators.password.fill(password);
   }
 
@@ -26,9 +22,11 @@ export class LoginPage {
     await this.locators.submit.click();
   }
 
-  async LoginUser(username: string, password: string) {
+  async LoginUser(username, password) {
     await this.fillUsername(username);
     await this.fillPassword(password);
     await this.submit();
   }
 }
+
+export default LoginPage;
