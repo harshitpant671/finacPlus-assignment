@@ -31,16 +31,7 @@ export default defineConfig({
 
   reportSlowTests: null,
 
-  reporter: [
-    ["list"],
-
-    [
-      "html",
-      {
-        outputFolder: "./playwright-report",
-      },
-    ],
-  ],
+  reporter: [["list"], ["html"], ["allure-playwright"]],
 
   use: {
     baseURL: `${process.env.APP_URL}/`.replace(/\/+$/, "/"),
