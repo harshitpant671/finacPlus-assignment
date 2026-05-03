@@ -3,12 +3,8 @@ import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-
-// export const TESTS_ROOT_PATH = __dirname;
-// export const STATE_DIR_PATH = `${TESTS_ROOT_PATH}/.state/`;
-// export const USER_AUTH_STATE_PATH = `${STATE_DIR_PATH}/user-auth.json`;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 dotenv.config({ path: path.resolve(__dirname, "../.env") });
 
@@ -31,7 +27,11 @@ export default defineConfig({
 
   reportSlowTests: null,
 
-  reporter: [["list"], ["html"], ["allure-playwright"]],
+  reporter: [
+    ["list"],
+    ["html", { open: "never" }],
+    ["allure-playwright"],
+  ],
 
   use: {
     baseURL: `${process.env.APP_URL}/`.replace(/\/+$/, "/"),
