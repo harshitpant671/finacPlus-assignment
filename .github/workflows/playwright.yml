@@ -33,10 +33,10 @@ jobs:
       - name: Run Playwright UI tests
         run: npx playwright test
 
-      - name: Upload Report
-        if: always() 
+      - name: Upload Playwright Report
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-reports
-          path: reports/
+          name: playwright-report
+          path: e2e-pw/playwright-report/
           retention-days: 30
