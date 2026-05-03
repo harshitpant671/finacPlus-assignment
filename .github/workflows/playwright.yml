@@ -31,13 +31,10 @@ jobs:
         run: npx playwright install --with-deps chromium # Installs chromium and needed OS libs
 
       - name: Run Playwright UI tests
-        run: npx playwright test login.spec.js
-        
-      - name: Run Playwright API tests
-        run: npx playwright test user-login-api.spec.js 
+        run: npx playwright test
 
       - name: Upload Report
-        if: always() # Ensures reports are uploaded even if tests fail
+        if: always() 
         uses: actions/upload-artifact@v4
         with:
           name: playwright-reports
