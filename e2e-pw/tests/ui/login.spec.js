@@ -1,6 +1,6 @@
 import test, { expect } from "@playwright/test";
-import { LoginPage } from "../pages/loginPage";
-import WebLocators from "../pages/locator";
+import { LoginPage } from "../../pages/loginPage";
+import WebLocators from "../../pages/locator";
 import * as fs from "fs";
 
 test.describe("Login Page", () => {
