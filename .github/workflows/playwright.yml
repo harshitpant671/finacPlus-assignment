@@ -33,13 +33,15 @@ jobs:
       - name: Run Playwright tests
         run: npx playwright test --reporter=html
 
-      - name: Debug files
-        run: ls -R
+      - name: Debug
+        run: |
+          pwd
+          ls -la
+          ls -la playwright-report || echo "❌ report folder not found"
 
-      - name: Upload Playwright Report
+      - name: Upload Report
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
           path: playwright-report/
-          if-no-files-found: warn
