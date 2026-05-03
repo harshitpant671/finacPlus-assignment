@@ -37,7 +37,7 @@ jobs:
         run: |
           pwd
           ls -la
-          ls -la playwright-report || echo "❌ report folder not found"
+          ls -la playwright-report || echo " report folder not found"
 
       - name: Upload Report
         if: always()
