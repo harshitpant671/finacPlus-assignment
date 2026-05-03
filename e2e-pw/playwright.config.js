@@ -27,11 +27,7 @@ export default defineConfig({
 
   reportSlowTests: null,
 
-  reporter: [
-    ["list"],
-    ["html", { open: "never" }],
-    ["allure-playwright"],
-  ],
+  reporter: [["list"], ["html", { open: "never" }], ["allure-playwright"]],
 
   use: {
     baseURL: `${process.env.APP_URL}/`.replace(/\/+$/, "/"),
